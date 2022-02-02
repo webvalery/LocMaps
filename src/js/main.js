@@ -4,7 +4,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const image = new Image();
-image.src = '../img/waves.svg';
+image.src = './img/waves.svg';
 let imageWidth = window.innerWidth;
 let imageHeight = 200;
 
@@ -34,7 +34,7 @@ function draw() {
   requestAnimationFrame(draw);
 }
 ctx.font = "100px Verdana";
-ctx.strokeText("Big smile!", 100, 400);
+ctx.strokeText("Привет Дима, я в а#уе!)", 100, 400);
 draw();
 
 
