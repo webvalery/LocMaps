@@ -8,33 +8,37 @@ image.src = './img/waves.svg';
 let imageWidth = window.innerWidth;
 let imageHeight = 200;
 
-const imageSlice = 2;
+const imageSlice = 5;
 image.addEventListener('load', draw);
 
 
 let speed = 0;
+let kf = 10;
 function draw() {
 
-  speed += 0.07;
+  speed += 0.5;
   ctx.clearRect(0, canvas.height - imageHeight - 10, canvas.width, canvas.height);
-  for(let i = 0; i < imageWidth; i++){
+  for (let i = 0; i < imageWidth; i++){
+    console.log(i);
     ctx.drawImage(
       image,
-      i * imageSlice,
-      0,
-      imageSlice,
-      imageHeight,
+      i * imageSlice, // sx
+      Math.sin(speed - (i / 12) * 2), // sy
+      imageSlice, // swidth 
+      imageHeight, // sheight
 
-      i * imageSlice,
-      canvas.height - imageHeight - (Math.sin(speed - (i / 20)) * 10),
-      imageSlice,
-      imageHeight
+      i * imageSlice, // x
+      canvas.height - imageHeight, // y
+      imageSlice, // width
+      imageHeight // height
     );
+
+    // if (kf >)
   }
   requestAnimationFrame(draw);
 }
 ctx.font = "100px Verdana";
-ctx.strokeText("Привет Дима, я в а#уе!)", 100, 400);
+ctx.strokeText("Привет )", 100, 400);
 draw();
 
 
