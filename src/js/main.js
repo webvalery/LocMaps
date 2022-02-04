@@ -17,13 +17,13 @@ let kf = 10;
 function draw() {
 
   speed += 0.5;
-  ctx.clearRect(0, canvas.height - imageHeight - 10, canvas.width, canvas.height);
+  ctx.clearRect(0, canvas.height - imageHeight, canvas.width, canvas.height);
   for (let i = 0; i < imageWidth; i++){
     console.log(i);
     ctx.drawImage(
       image,
       i * imageSlice, // sx
-      Math.sin(speed - (i / 12) * 2), // sy
+      Math.sin(speed - (i / 12) * 3) +  Math.sin(speed - (i / 10)), // sy
       imageSlice, // swidth 
       imageHeight, // sheight
 
@@ -32,8 +32,6 @@ function draw() {
       imageSlice, // width
       imageHeight // height
     );
-
-    // if (kf >)
   }
   requestAnimationFrame(draw);
 }
