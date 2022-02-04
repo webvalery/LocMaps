@@ -34,7 +34,7 @@ const watcher = () => {
 // 
 const build = series(
   clear,
-  parallel(html, css, js, img, fonts)
+  parallel(html, scss, js, img, fonts)
 );
 
 const dev = series(
@@ -43,7 +43,7 @@ const dev = series(
 );
 
 // Задачи
-exports.css = css;
+exports.scss = scss;
 exports.js = js;
 exports.img = img;
 exports.fonts = fonts;

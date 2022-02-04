@@ -19,7 +19,6 @@ function draw() {
   speed += 0.5;
   ctx.clearRect(0, canvas.height - imageHeight, canvas.width, canvas.height);
   for (let i = 0; i < imageWidth; i++){
-    console.log(i);
     ctx.drawImage(
       image,
       i * imageSlice, // sx
